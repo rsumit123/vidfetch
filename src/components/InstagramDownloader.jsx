@@ -9,6 +9,7 @@ const InstagramVideoDownloader = () => {
   const [url, setUrl] = useState();
   const [videoUrl, setVideoUrl] = useState();
   const [loading, setLoading] = useState(false);
+  const [videoId, setVideoId] = useState();
 
   const handleInputChange = (event) => {
     setUrl(event.target.value);
@@ -22,6 +23,8 @@ const InstagramVideoDownloader = () => {
         `${import.meta.env.VITE_API_URL}video-id?postUrl=${url}`
       );
       const { video_id } = response.data;
+
+      setVideoId(video_id);
 
 
       if (video_id) {
@@ -46,7 +49,7 @@ const InstagramVideoDownloader = () => {
   const handleDownloadLinkClick = () => {
     const link = document.createElement("a");
     link.href = videoUrl;
-    link.download = "videfetch_insta_video.mp4";
+    link.download = `vidfetch_insta_${videoId}.mp4`;
     link.click();
   };
   return (
