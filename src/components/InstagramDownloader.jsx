@@ -23,12 +23,14 @@ const InstagramVideoDownloader = () => {
       );
       const { video_id } = response.data;
 
+
       if (video_id) {
         const video_response = await axios.get(
           `${import.meta.env.VITE_API_URL}video?videoId=${video_id}`
         );
 
         const { video_url } = video_response.data;
+
 
         if (video_url) {
           setVideoUrl(video_url);
@@ -64,7 +66,7 @@ const InstagramVideoDownloader = () => {
               {loading ? "Downloading..." : "Download Video"}
             </button>
           </div>
-          {videoUrl && (
+          {videoUrl && !loading && (
             <div className="video-wrapper">
               <a
                 className="download-link"
