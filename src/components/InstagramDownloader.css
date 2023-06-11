@@ -95,6 +95,7 @@ html, body
   .video-wrapper {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 5px;
   }
   
   .video {
@@ -134,6 +135,11 @@ html, body
 
   .download-link{
     cursor: pointer;
+  }
+
+  .click-here{
+    display: inline;
+    color: #4058c5;
   }
 
   @media only screen and (max-width: 400px) {

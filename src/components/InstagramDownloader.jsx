@@ -26,7 +26,6 @@ const InstagramVideoDownloader = () => {
 
       setVideoId(video_id);
 
-
       if (video_id) {
         const video_response = await axios.get(
           `${import.meta.env.VITE_API_URL}video?videoId=${video_id}`
@@ -34,22 +33,25 @@ const InstagramVideoDownloader = () => {
 
         const { video_url } = video_response.data;
 
-
         if (video_url) {
           setVideoUrl(video_url);
+          setLoading(false);
+          handleDownloadLinkClick(video_id);
         }
       }
     } catch (error) {
       console.error("Error downloading video:", error);
-    } finally {
-      setLoading(false);
     }
   };
 
-  const handleDownloadLinkClick = () => {
+  const handleDownloadLinkClick = (video_id = "") => {
     const link = document.createElement("a");
     link.href = videoUrl;
-    link.download = `vidfetch_insta_${videoId}.mp4`;
+    if (video_id !== "") {
+      link.download = `vf_insta_${video_id}.mp4`;
+    } else {
+      link.download = `vf_insta_${videoId}.mp4`;
+    }
     link.click();
   };
   return (
@@ -79,7 +81,7 @@ const InstagramVideoDownloader = () => {
                 onClick={handleDownloadLinkClick}
                 download="vidfetch_video"
               >
-                Click here to download the video
+                Your download should start automatically, if it does not start, <div className="click-here">Click here</div> to download the video
               </a>
             </div>
           )}
