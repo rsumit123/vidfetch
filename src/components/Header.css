@@ -20,6 +20,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #333333;
+    font-size: 26px;
 }
 
 
@@ -31,5 +32,16 @@ header{
     align-items: center;
     /* background-color: black; */
     background-color: #FFE8E5;
-    height: 130px;
+    height: 100px;
 }
+
+@media only screen and (max-width: 400px) {
+    header {
+        height: 70px;
+        
+    }
+
+    .title{
+        font-size: 24px;
+    }
+  }
