@@ -42,6 +42,9 @@ const InstagramVideoDownloader = () => {
     } catch (error) {
       console.error("Error downloading video:", error);
     }
+    finally{
+        setLoading(false);
+    }
   };
 
   const handleDownloadLinkClick = (video_id = "", video_url = "") => {
