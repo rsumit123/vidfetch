@@ -36,7 +36,7 @@ const InstagramVideoDownloader = () => {
         if (video_url) {
           setVideoUrl(video_url);
           setLoading(false);
-          handleDownloadLinkClick(video_id);
+          handleDownloadLinkClick(video_id, video_url);
         }
       }
     } catch (error) {
@@ -44,12 +44,14 @@ const InstagramVideoDownloader = () => {
     }
   };
 
-  const handleDownloadLinkClick = (video_id = "") => {
+  const handleDownloadLinkClick = (video_id = "", video_url = "") => {
     const link = document.createElement("a");
-    link.href = videoUrl;
-    if (video_id !== "") {
+
+    if (video_id !== "" && video_url != "") {
+      link.href = video_url;
       link.download = `vf_insta_${video_id}.mp4`;
     } else {
+      link.href = videoUrl;
       link.download = `vf_insta_${videoId}.mp4`;
     }
     link.click();
@@ -81,7 +83,9 @@ const InstagramVideoDownloader = () => {
                 onClick={handleDownloadLinkClick}
                 download="vidfetch_video"
               >
-                Your download should start automatically, if it does not start, <div className="click-here">Click here</div> to download the video
+                Your download should start automatically, if it does not start,{" "}
+                <div className="click-here">Click here</div> to download the
+                video
               </a>
             </div>
           )}
