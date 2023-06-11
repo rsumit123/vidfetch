@@ -1,0 +1,19 @@
+/* Your CSS file */
+
+footer {
+    background-color: #D2F1FF;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .text {
+    color: #555555;
+    font-size: 14px;
+    margin: 0;
+  }
+  

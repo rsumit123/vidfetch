@@ -1,0 +1,143 @@
+/* InstagramVideoDownloader.css */
+html, body
+{
+    height: 100%;
+}
+
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+
+.container-root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(to right, #FF9D6C, #FF4F79, #FF0090, #FF00A3);
+}
+.container {
+    /* max-width: 800px; */
+    width: 50vh;
+    margin: 0 auto;
+    padding: 20px;
+    
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    box-sizing: border-box;
+    gap: 3rem;
+    background: linear-gradient(to right, #F7F53E, #58E4FF);
+    
+
+  }
+
+  .container h2{
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .input-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4c6ef5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #4058c5;
+  }
+  
+  .video-wrapper {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .download-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #4c6ef5;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #4058c5;
+  }
+  
+  /* Additional Styles for Centering */
+  body {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; */
+    /* background-color: #f2f2f2; */
+    /* background: linear-gradient(to right, #FF9D6C, #FF4F79, #FF0090, #FF00A3); */
+    margin: 0px;
+  }
+  
+
+
+  .download-link{
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .container {
+      width: 40vh;
+    }
+  }
